@@ -2,8 +2,9 @@
 //1
 
 function filterRange(arr, a, b) {
-    //write your code here
-  }
+
+  return arr.filter(i => (a <= i && i <= b));
+}
   
   let arr = [5, 3, 8, 1];
   
@@ -16,7 +17,15 @@ function filterRange(arr, a, b) {
 //Write a function filterRangeInPlace(arr, a, b) that gets an array arr and removes from it all values except those that are between a and b. The test is: a ≤ arr[i] ≤ b.
 //2
   function filterRangeInPlace(arr, a, b) {
-    //write your code here
+    for (let i = 0; i < arr.length; i++) {
+      let val = arr[i];
+  
+      
+      if (val < a || val > b) {
+        arr.splice(i, 1);
+        i--;
+      }
+    }
   }
   
   let array = [5, 3, 8, 1];
